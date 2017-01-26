@@ -1,5 +1,5 @@
 def binary_mul(a, b)
-  return 0 if (a == 0) || (b == 0)
+  return 0 if a.zero? || b.zero?
 
   aa = a >> 1
   bb = b << 1
@@ -8,4 +8,10 @@ def binary_mul(a, b)
   b + binary_mul(aa, bb)
 end
 
-puts(binary_mul(6, -3))
+test_numbers = [6, 3]
+
+puts('Got:')
+puts(binary_mul(test_numbers.first, test_numbers.last))
+
+puts('Expected:')
+puts(test_numbers.first * test_numbers.last)
